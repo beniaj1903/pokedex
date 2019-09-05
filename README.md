@@ -6,13 +6,15 @@
 	The index info list all pokemons in groups of 12 and show the next data:
 	-Name
 	-Image
-	Each pokemon has a button where loas a new page with the pokemon details. This details are:
+	
+	Each pokemon has a button where loads a new page with the pokemon details, with the following characteristics:
 
-	- Name
 	- Front image
 	- Back image
 	- Weight
 	- Height
+	- Species
+	- Name
 	- Abilities
 	- Moves
 
