@@ -36,6 +36,15 @@ body{ font-family: "Canada Medium" !important; }
   -webkit-box-shadow: 0 0 6px 2px #b0b2ab;
   box-shadow: 0 0 6px 2px #b0b2ab;
 }
+
+.pokemon-card {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  -moz-box-shadow: 0 0 6px 2px #b0b2ab;
+  -webkit-box-shadow: 0 0 6px 2px #b0b2ab;
+  box-shadow: 0 0 6px 2px #b0b2ab;
+}
  
  .pokemon:hover {
   background-color: #fff;

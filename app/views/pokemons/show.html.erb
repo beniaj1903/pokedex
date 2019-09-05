@@ -1,20 +1,54 @@
-<div class="work-feature-block row">
-  <img class="work-feature-block-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="2">
-  <h2 class="work-feature-block-header text-center"><strong>Ivysaur</strong></h2>
-</div>
-<div class="work-feature-block row">
-  <div class="col-xs-12">
-    <label>Peso:</label>
-    <p>You need complete with pokemon's weight</p>
-    <label>Altura:</label>
-    <p>You need complete with pokemon's height</p>
-    <label>Habilidades:</label>
-    <p>You need complete with pokemon's abilities</p>
-    <label>Movimientos:</label>
-    <p>You need complete with pokemon's movements</p>
-  </div>
-</div>
 <div class="row">
+  <div class="pokemon-name pokemon-card" style="margin-left: 20px; margin-right: 20px; color: black">
+    <div class="row">
+      <h2 class="work-feature-block-header text-center"><strong><%= @pokemon_detail[:name]%></strong></h2>
+    </div>
+    <div class="row">
+      <span class="col-xs-3">
+        <div class="row">
+          <label style="padding-right: 28px; margin: 5px">Peso:</label>
+          <span><%= @pokemon_detail[:weight] / 100.00 %> Kg</span>
+        </div>
+        <div class="row">
+          <label style="padding-right: 20px; margin: 5px">Altura:</label>
+          <span><%= @pokemon_detail[:height] / 10.00 %> m</span>
+        </div>
+        <div class="row">
+          <label style="padding-right: 10px; margin: 5px">Especie:</label>
+          <span><%= @pokemon_detail[:species] %></span>
+        </div>
+      </span>
+      <span class="col-xs-3"><%= image_tag (Rails.configuration.image_base + @pokemon_detail[:id].to_s + '.png'),  :style => "width: 100%"%></span>
+      <span class="col-xs-3"><%= image_tag (Rails.configuration.image_back_base + @pokemon_detail[:id].to_s + '.png'),  :style => "width: 100%"%></span>
+      <span class="col-xs-3"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row pokemon-card" style="margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
+    <div class="col-xs-2">
+      <label>Habilidades:</label>
+    </div>
+    <div class="col-xs-8">
+    <% @pokemon_detail[:abilities].map do |ability| %>
+      <span class="col-xs-6"><%= ability %></span>
+      <%end%>
+    </div>
+    <div class="col-xs-2">
+    </div>
+  </div>
+  <div class="row pokemon-card" style="margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
+    <div class="col-xs-2">
+      <label>Movimientos:</label>
+    </div>
+    <div class="col-xs-8">
+    <% @pokemon_detail[:moves].map do |move| %>
+      <span class="col-xs-4"><%= move %></span>
+      <%end%>
+    </div>
+    <div class="col-xs-2">
+    </div>
+  </div>
+<div class="row" style="margin-left: 5px; margin-right: 5px;">
   <%= link_to root_path, class:"btn btn-success btn-lg btn-block" do%>
     Volver
   <%end%>
